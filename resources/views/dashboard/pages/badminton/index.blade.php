@@ -1,4 +1,4 @@
-@extends('user.layout.main')
+@extends('dashboard.layout.main')
 
 @section('halo')
 <main id="main" class="main">

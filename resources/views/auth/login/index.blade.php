@@ -14,7 +14,7 @@
         <div class="row justify-content-center"> <!-- Tambahkan kelas 'justify-content-center' di sini -->
             <div class="col-md-4">
                 {{-- form --}}
-                <form action="" method=""class="shadow p-3 mb-5 bg-white form p-4">
+                <form action="{{route('dashboard.dashboard.index')}}" method=""class="shadow p-3 mb-5 bg-white form p-4">
                     @csrf
                     <h3 style="margin-bottom: 20px;">Login Manager</h3>
                     <div class="form-group">

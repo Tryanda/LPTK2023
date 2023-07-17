@@ -11,3 +11,5 @@
 
   <!-- Template Main JS File -->
   <script src="user/assets/js/main.js"></script>
+
+  @yield("script")

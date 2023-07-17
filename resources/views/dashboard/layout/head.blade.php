@@ -1,5 +1,9 @@
 <meta content="" name="description">
 <meta content="" name="keywords">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>@yield('title')</title>
 
 <!-- Favicons -->
 <link href="user/assets/img/um.png" rel="icon">
@@ -21,10 +25,6 @@
 <!-- Template Main CSS File -->
 <link href="user/assets/css/style.css" rel="stylesheet">
 
-<!-- =======================================================
-* Template Name: NiceAdmin
-* Updated: Mar 09 2023 with Bootstrap v5.2.3
-* Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-======================================================== -->
+@yield("css")
+
+
