@@ -16,12 +16,12 @@
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="forms-elements.html">
-              <i class="bi bi-circle"></i><span>Tambah Peserta</span>
+              <i class="bi bi-circle"></i><span>Tambah data</span>
             </a>
           </li>
           <li>
             <a href="forms-layouts.html">
-              <i class="bi bi-circle"></i><span>Data Peserta</span>
+              <i class="bi bi-circle"></i><span>Data peserta</span>
             </a>
           </li>
         </ul>

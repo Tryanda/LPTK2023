@@ -19,30 +19,36 @@
     
     <div class="container pt-5">
         <div class="row justify-content-center">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 {{-- form --}}
                 <form action="{{url('/proses-form')}}" method="POST" enctype="multipart/form-data" class="shadow p-3 mb-5 bg-white form p-4">
                     @csrf
                     <h3 style="margin-bottom: 20px;">Registration Manager</h3>
                     <div class="form-group">
-                        <div class="row">
-                            <div class="form-group col">
-                                <label for="nim" class="details">NIK</label>
-                                <input type="text" class="form-control input-detail" id="nik" name="nik">
-                                @error('nik')
-                                    <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="form-group col">
-                                <label for="nama" class="details">Nama Lengkap</label>
-                                <input type="text" class="form-control" id="nama" name="nama">
-                                @error('nama')
-                                    <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
+                        <div class="form-group">
+                            <label for="nama" class="details">Nama Lengkap</label>
+                            <input type="text" class="form-control" id="nama" name="nama">
+                            @error('nama')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
+                        <div class="form-group">
+                            <label for="nama" class="details">Email</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                            @error('email')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="nim" class="details">NIP</label>
+                            <input type="text" class="form-control input-detail" id="nik" name="nik">
+                            @error('nik')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        
                         <div class="form-group mt-2" class="details">
-                            <label for="email" class="details">Tempat, Tanggal lahir</label>
+                            <label for="ttl" class="details">Tempat, Tanggal lahir</label>
                             <input type="text" class="form-control" id="ttl" name="ttl">
                             @error('ttl')
                                     <div class="text-danger">{{ $message }}</div>
@@ -76,7 +82,7 @@
                         <div id="skForm" style="display: none;">
                             <div class="form-group">
                                 <label for="skFile" >File SK Pengangkatan:</label>
-                                <input type="text" class="form-control" id="skFile" name="skFile" />
+                                <input type="file" class="form-control" id="skFile" name="skFile" />
                                 @error('skFile')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -96,25 +102,36 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group details mt-2">
-                            <label class="form-label" for="kampus">Asal Perguruan Tinggi</label>
-                            <select class="form-select" name="kampus" id="kampus">
-                                <option value="Universitas Negeri Gorontalo">Universitas Negeri Gorontalo</option>
-                                <option value="Universitas Negeri Jakarta">Universitas Negeri Jakarta</option>
-                                <option value="Universitas Negeri Makassar">Universitas Negeri Makassar</option>
-                                <option value="Universitas Negeri Malang">Universitas Negeri Malang</option>
-                                <option value="Universitas Negeri Manado">Universitas Negeri Manado</option>
-                                <option value="Universitas Negeri Medan">Universitas Negeri Medan</option>
-                                <option value="Universitas Negeri Padang">Universitas Negeri Padan</option>
-                                <option value="Universitas Negeri Semarang">Universitas Negeri Semarang</option>
-                                <option value="Universitas Negeri Surabaya">Universitas Negeri Surabaya</option>
-                                <option value="Universitas Negeri Yogyakarta">Universitas Negeri Yogyakarta</option>
-                                <option value="Universitas Pendidikan Ganesha">Universitas Pendidikan Ganesha</option>
-                                <option value="Universitas Pendidikan Indonesia">Universitas Pendidikan Indonesia</option>
-                                <option value="Universitas Cenderawasih">Universitas Cenderawasih</option>
-                                <option value="Universitas Sebelas Maret">Universitas Sebelas Maret</option>
-                            </select>
+                        <div class="row">
+                            <div class="form-group details mt-2 col">
+                                <label class="form-label" for="cabor">Sebagai Manager</label>
+                                <select class="form-select" name="cabor" id="cabor">
+                                    <option value="Universitas Negeri Gorontalo">Bulu Tangkis</option>
+                                    <option value="Universitas Negeri Jakarta">Tenis Lapangan</option>
+                                    <option value="Universitas Negeri Makassar">Tenis Meja</option>
+                                </select>
+                            </div>
+                            <div class="form-group details mt-2 col">
+                                <label class="form-label" for="kampus">Asal Kampus</label>
+                                <select class="form-select" name="kampus" id="kampus">
+                                    <option value="Universitas Negeri Gorontalo">Universitas Negeri Gorontalo</option>
+                                    <option value="Universitas Negeri Jakarta">Universitas Negeri Jakarta</option>
+                                    <option value="Universitas Negeri Makassar">Universitas Negeri Makassar</option>
+                                    <option value="Universitas Negeri Malang">Universitas Negeri Malang</option>
+                                    <option value="Universitas Negeri Manado">Universitas Negeri Manado</option>
+                                    <option value="Universitas Negeri Medan">Universitas Negeri Medan</option>
+                                    <option value="Universitas Negeri Padang">Universitas Negeri Padan</option>
+                                    <option value="Universitas Negeri Semarang">Universitas Negeri Semarang</option>
+                                    <option value="Universitas Negeri Surabaya">Universitas Negeri Surabaya</option>
+                                    <option value="Universitas Negeri Yogyakarta">Universitas Negeri Yogyakarta</option>
+                                    <option value="Universitas Pendidikan Ganesha">Universitas Pendidikan Ganesha</option>
+                                    <option value="Universitas Pendidikan Indonesia">Universitas Pendidikan Indonesia</option>
+                                    <option value="Universitas Cenderawasih">Universitas Cenderawasih</option>
+                                    <option value="Universitas Sebelas Maret">Universitas Sebelas Maret</option>
+                                </select>
+                            </div>
                         </div>
+                        
                         {{-- button --}}
                         <div class="button">
                             <input type="submit" value="Register">
