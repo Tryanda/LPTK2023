@@ -17,6 +17,7 @@ class Manager extends Model
         "place_of_birth",
         "day_of_birth",
         "status",
+        "gender",
         "nidn",
         "file",
         "manager",

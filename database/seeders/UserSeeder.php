@@ -16,20 +16,45 @@ class UserSeeder extends Seeder
             'email' => 'admin@gmail.com'
         ],[
             'name' => 'Administrator',
+            'email' => 'admin@gmail.com',
             'nip'  => '210533616011',
             "place_of_birth" => 'Malang',
-            "day_of_birth" => '18-11-02'
-            "status",
-            "nidn",
-            "file",
-            "manager",
-            "university"
-            'email' => 'admin@gmail.com',
-            'phone' => '085769782101',
+            "day_of_birth" => '18-11-02',
+            "nidn" => '210533616011',
             'password' => bcrypt('123456789'),
             'email_verified_at' => date('Y-m-d H:i:s'),
         ]);
 
         $userAdministrator->assignRole(RoleEnum::ADMINISTRATOR);
+
+        $userVerifikator = User::firstOrCreate([
+            'email' => 'verify@gmail.com'
+        ],[
+            'name' => 'Verifikator',
+            'email' => 'verify@gmail.com',
+            'nip'  => '210533616012',
+            "place_of_birth" => 'Malang',
+            "day_of_birth" => '18-11-02',
+            "nidn" => '210533616012',
+            'password' => bcrypt('123456789'),
+            'email_verified_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        $userVerifikator->assignRole(RoleEnum::VERIFIKATOR);
+
+        $userVerifikator = User::firstOrCreate([
+            'email' => 'verify@gmail.com'
+        ],[
+            'name' => 'Verifikator',
+            'email' => 'verify@gmail.com',
+            'nip'  => '210533616012',
+            "place_of_birth" => 'Malang',
+            "day_of_birth" => '18-11-02',
+            "nidn" => '210533616012',
+            'password' => bcrypt('123456789'),
+            'email_verified_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        $userVerifikator->assignRole(RoleEnum::VERIFIKATOR);
     }
 }

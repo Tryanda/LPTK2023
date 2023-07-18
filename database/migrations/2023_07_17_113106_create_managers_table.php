@@ -14,15 +14,16 @@ return new class extends Migration
         Schema::create('managers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string("nip");
             $table->string("place_of_birth");
             $table->string("day_of_birth");
-            $table->string("status");
+            $table->string("status")->nullable();
+            $table->string("gender");
             $table->string("nidn")->nullable();
             $table->string("file")->nullable();
-            $table->string("manager");
-            $table->string("university");
+            $table->string("manager")->nullable();
+            $table->string("university")->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->softDeletes();
