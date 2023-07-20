@@ -10,21 +10,22 @@
     <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
+    @include('sweetalert::alert')
     <div class="container pt-5">
         <div class="row justify-content-center"> <!-- Tambahkan kelas 'justify-content-center' di sini -->
             <div class="col-md-4">
                 {{-- form --}}
-                <form action="{{route('dashboard.dashboard.index')}}" method=""class="shadow p-3 mb-5 bg-white form p-4">
+                <form action="{{route('post')}}" method="POST" class="shadow p-3 mb-5 bg-white form p-4">
                     @csrf
                     <h3 style="margin-bottom: 20px;">Login Manager</h3>
                     <div class="form-group">
                         <div class="form-group">
-                            <label for="nim" class="details">NIK</label>
-                            <input type="text" class="form-control input-detail" id="nik" name="nik">
+                            <label for="email" class="details">Email</label>
+                            <input type="email" class="form-control input-detail" value="{{old('email')}}" id="email" name="email">
                         </div>
                         <div class="form-group">
-                            <label for="nama" class="details">Nama Lengkap</label>
-                            <input type="text" class="form-control" id="nama" name="nama">
+                            <label for="password" class="details">Password</label>
+                            <input type="text" class="form-control" id="password" name="password">
                         </div>
 
                         {{-- button --}}

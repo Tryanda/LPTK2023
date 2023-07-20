@@ -15,7 +15,17 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string("nip")->nullable();
+            $table->string("place_of_birth")->nullable();
+            $table->date("day_of_birth")->nullable();
+            $table->string("status")->nullable();
+            $table->string("gender")->nullable();
+            $table->string("nidn")->nullable();
+            $table->string("file")->nullable();
+            $table->string("cabor_id")->nullable();
+            $table->string("university")->nullable();
             $table->timestamp('email_verified_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

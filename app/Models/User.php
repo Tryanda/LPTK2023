@@ -7,20 +7,24 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+    use HasApiTokens, HasFactory, Notifiable, HasRoles;
     protected $fillable = [
         'name',
         'email',
-        'password',
+        'nip',
+        'place_of_birth',
+        'day_of_birth',
+        'status',
+        'gender',
+        'nidn',
+        'file',
+        'cabor_id',
+        'university',
+        'email_verified_at',
     ];
 
     /**
@@ -42,4 +46,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+    public function isAdministrator(): bool
+    {
+        return $this->hasRole(RoleEnum::ADMINISTRATOR);
+    }
+
+    public function isVerifikator(): bool
+    {
+        return $this->hasRole(RoleEnum::VERIFIKATOR);
+    }
+
+    public function isManager(): bool
+    {
+        return $this->hasRole(RoleEnum::MANAGER);
+    }
 }

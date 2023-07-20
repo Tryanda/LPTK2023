@@ -18,9 +18,7 @@ Route::group(["namespace"=>"App\Http\Controllers\Auth"], function(){
         Route::post("/", "RegisterController@post")->name('register.post');
     });
 
-    Route::group(["as" => "logout.","prefix" => "logout"], function () {
-        Route::get("/", "LogoutController@index")->name('logout.index');
-    });
+    Route::get('/logout', 'LogoutController@logout')->name("logout");
 });
 
 // Route::get('/',[UserController::class,'register']);
@@ -33,7 +31,7 @@ Route::get('tenis-meja',[TenisMejaController::class,'index']);
 Route::get('tenis-lapangan',[TenisLapanganController::class,'index']);
 
 // Route Administrator
-Route::group(["namespace"=>"App\Http\Controllers\Dashboard", "as"=>"dashboard.", "prefix"=>"dashboard"], function(){
+Route::group(["namespace"=>"App\Http\Controllers\Dashboard", "as"=>"dashboard.", "prefix"=>"dashboard", "middleware"=>['auth']], function(){
     Route::get("/", "DashboardController@index")->name("dashboard.index");
 
     // Route hasRole Admin n Manager

@@ -7,6 +7,8 @@
     @include('dashboard.layout.navbar')
     @include('dashboard.layout.sidebar')
 
+    @include('sweetalert::alert')
+
     @yield('content')
 
     @include('dashboard.layout.footer')
